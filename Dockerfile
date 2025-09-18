@@ -1,4 +1,4 @@
-FROM golang:1.22-alpine AS build
+FROM golang:18-alpine AS build
 WORKDIR /src
 
 # Install wget for downloading certificates
