@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+    <html style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
+
+<head>
+    <meta charset="utf-8">
+    <title>StreamX - Configuration</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            padding: 2vh;
+            font-size: 1.8vh;
+        }
+
+        html {
+            background-attachment: fixed;
+            box-shadow: inset 0 0 0 2000px rgb(0 0 0 / 30%);
+        }
+
+        body {
+            display: flex;
+            font-family: 'Open Sans', Arial, sans-serif;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3.2vh;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.6vh;
+            font-weight: normal;
+            font-style: italic;
+            opacity: 0.8;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.8vh;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin: 0;
+            text-shadow: 0 0 1vh rgba(0, 0, 0, 0.15);
+        }
+
+        p {
+            font-size: 1.75vh;
+        }
+
+        ul {
+            font-size: 1.75vh;
+            margin: 0;
+            margin-top: 1vh;
+            padding-left: 3vh;
+        }
+
+        a {
+            color: white
+        }
+
+        a.install-link {
+            text-decoration: none
+        }
+
+        button {
+            border: 0;
+            outline: 0;
+            color: white;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 50%, #006699 100%);
+            padding: 1.2vh 3.5vh;
+            margin: 0;
+            text-align: center;
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 1.8vh;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-block;
+            box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.1s ease-in-out;
+        }
+
+        button:hover {
+            box-shadow: none;
+        }
+
+        button:active {
+            box-shadow: 0 0 0 0.5vh white inset;
+        }
+
+        #addon {
+            width: 50vh;
+            margin: auto;
+        }
+
+        .logo {
+            height: 14vh;
+            width: 14vh;
+            margin: auto;
+            margin-bottom: 3vh;
+            margin-left: 16vh;
+        }
+
+        .logo img,
+        .logo svg {
+            width: 115%;
+        }
+
+        .name {
+            line-height: 4vh;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .version {
+            line-height: 3vh;
+            margin-bottom: 2vh;
+            white-space: nowrap;
+        }
+
+        .description {
+            white-space: normal;
+            word-wrap: break-word;
+            max-width: 100%;
+        }
+
+        .contact {
+            position: absolute;
+            left: 0;
+            bottom: 4vh;
+            width: 100%;
+            text-align: center;
+        }
+
+        .contact a {
+            font-size: 1.4vh;
+            font-style: italic;
+        }
+
+        .separator {
+            margin-bottom: 4vh;
+        }
+
+        .form-element {
+            margin-bottom: 2vh;
+        }
+
+        .label-to-top {
+            margin-bottom: 2vh;
+        }
+
+        .label-to-right {
+            margin-left: 1vh !important;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        input[type="text"], 
+        input[type="number"], 
+        input[type="email"], 
+        input[type="password"],
+        select {
+            font-size: 1.8vh !important;
+            padding: 0.8vh 1vh !important;
+            line-height: 1.4 !important;
+            height: auto !important;
+            box-sizing: border-box !important;
+        }
+
+        .install-button-container {
+            text-align: center;
+            margin: 2vh 0;
+        }
+
+        .requirements-info {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5vh;
+            padding: 1.5vh;
+            margin: 2vh 0;
+            text-align: center;
+        }
+
+        .requirements-info p {
+            margin: 0;
+            color: #e6f3ff;
+            font-size: 1.6vh;
+            line-height: 1.4;
+        }
+    </style>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M25 50 Q35 40 45 50 Q55 60 65 50 Q75 40 85 50' stroke='white' stroke-width='2' fill='none' opacity='0.8'/><path d='M25 60 Q35 50 45 60 Q55 70 65 60 Q75 50 85 60' stroke='white' stroke-width='2' fill='none' opacity='0.6'/><path d='M40 38 L50 48 M50 38 L40 48' stroke='white' stroke-width='6' stroke-linecap='round'/><path d='M60 38 L70 48 M70 38 L60 48' stroke='white' stroke-width='6' stroke-linecap='round'/><circle cx='23' cy='25' r='3' fill='white' opacity='0.7'/><circle cx='86' cy='25' r='2' fill='white' opacity='0.7'/><circle cx='23' cy='77' r='2' fill='white' opacity='0.5'/><circle cx='86' cy='77' r='3' fill='white' opacity='0.5'/></svg>" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css"
+        integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="addon">
+        <div class="logo">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Streaming waves -->
+                <path d="M25 50 Q35 40 45 50 Q55 60 65 50 Q75 40 85 50" stroke="white" stroke-width="2" fill="none" opacity="0.8"></path>
+                <path d="M25 60 Q35 50 45 60 Q55 70 65 60 Q75 50 85 60" stroke="white" stroke-width="2" fill="none" opacity="0.6"></path>
+
+                <!-- Large X shapes slightly above waves for abstract effect -->
+                <path d="M40 38 L50 48 M50 38 L40 48" stroke="white" stroke-width="6" stroke-linecap="round"></path>
+                <path d="M60 38 L70 48 M70 38 L60 48" stroke="white" stroke-width="6" stroke-linecap="round"></path>
+
+                <!-- Data flow indicators - arranged asymmetrically -->
+                <circle cx="23" cy="25" r="3" fill="white" opacity="0.7"></circle>
+                <circle cx="86" cy="25" r="2" fill="white" opacity="0.7"></circle>
+                <circle cx="23" cy="77" r="2" fill="white" opacity="0.5"></circle>
+                <circle cx="86" cy="77" r="3" fill="white" opacity="0.5"></circle>
+            </svg>
+        </div>
+        <h1 class="name">StreamX</h1>
+        <h2 class="version">v2.0.0</h2>
+        <h2 class="description">Advanced torrent streaming addon requiring Prowlarr or Real Debrid</h2>
+        
+        <div class="requirements-info">
+            <p><strong>Requirements:</strong> You must have either Prowlarr (for torrent indexing) or Real Debrid (for cached downloads) configured to use this addon.</p>
+            <p><strong>Note:</strong> If API keys are set in Docker environment variables (PROWLARR_API_KEY, REAL_DEBRID_API_KEY), you can leave those fields empty in this form.</p>
+        </div>
+
+        <div class="separator"></div>
+
+        <form class="pure-form" id="mainForm">
+            <div class="form-element">
+                <div class="label-to-top">Prowlarr API URL:</div>
+                <input type="text" id="pUrl" name="pUrl" class="full-width" required value="http://prowlarr:9696"/>
+            </div>
+            <div class="form-element">
+                <div class="label-to-top">Prowlarr API Key (optional if set in Docker):</div>
+                <input type="text" id="pKey" name="pKey" class="full-width" placeholder="Optional if configured via environment variables" />
+            </div>
+            <div class="form-element">
+                <div class="label-to-top">Real Debrid API Token (<a href="https://real-debrid.com/apitoken"
+                        target="_blank">get here</a>) - Optional:</div>
+                <input type="text" id="rd" name="rd" class="full-width" placeholder="Optional if configured via environment variables" />
+            </div>
+            
+            <div class="separator"></div>
+            <h3>Quality & Filtering Preferences</h3>
+            
+            <div class="form-element">
+                <div class="label-to-top">Minimum Resolution:</div>
+                <select id="minRes" name="minRes" class="full-width">
+                    <option value="0">Any</option>
+                    <option value="480">480p</option>
+                    <option value="720" selected>720p (Recommended)</option>
+                    <option value="1080">1080p</option>
+                    <option value="2160">4K</option>
+                </select>
+            </div>
+            
+            <div class="form-element">
+                <div class="label-to-top">Maximum Resolution:</div>
+                <select id="maxRes" name="maxRes" class="full-width">
+                    <option value="0">Any</option>
+                    <option value="480">480p</option>
+                    <option value="720">720p</option>
+                    <option value="1080">1080p</option>
+                    <option value="2160" selected>4K (Default)</option>
+                </select>
+            </div>
+            
+            <div class="form-element">
+                <div class="label-to-top">Minimum File Size (GB):</div>
+                <input type="number" id="minSize" name="minSize" class="full-width" min="0" step="0.1" value="0.5" />
+                <p style="font-size: 1.5vh; opacity: 0.8; margin-top: 0.5vh;">
+                    0.5GB minimum helps avoid very low quality releases
+                </p>
+            </div>
+            
+            <div class="form-element">
+                <div class="label-to-top">Maximum File Size (GB):</div>
+                <input type="number" id="maxSize" name="maxSize" class="full-width" min="0" step="0.1" value="25" />
+                <p style="font-size: 1.5vh; opacity: 0.8; margin-top: 0.5vh;">
+                    25GB maximum to avoid oversized files
+                </p>
+            </div>
+            
+            <div class="form-element">
+                <div class="label-to-top">Minimum Seeders:</div>
+                <input type="number" id="minSeeders" name="minSeeders" class="full-width" min="0" value="5" />
+                <p style="font-size: 1.5vh; opacity: 0.8; margin-top: 0.5vh;">
+                    5 seeders minimum for reliable download speeds
+                </p>
+            </div>
+            
+            <div class="form-element">
+                <div class="label-to-top">Excluded Quality Sources (comma-separated):</div>
+                <input type="text" id="excludedQualities" name="excludedQualities" class="full-width" 
+                       value="cam,camrip,telesync,tsrip,hdcam,tc,ppvrip,r5,vhsscr" />
+                <p style="font-size: 1.5vh; opacity: 0.8; margin-top: 0.5vh;">
+                    Common values: cam, camrip, telesync, tsrip, hdcam, tc, ppvrip, r5, vhsscr
+                </p>
+            </div>
+            
+            <div class="form-element">
+                <div class="label-to-top">Search Timeout (seconds):</div>
+                <input type="number" id="searchTimeout" name="searchTimeout" class="full-width" min="10" max="120" value="45" />
+                <p style="font-size: 1.5vh; opacity: 0.8; margin-top: 0.5vh;">
+                    How long to wait for all indexers to complete (10-120 seconds). Higher = more complete results, but slower response.
+                </p>
+            </div>
+            
+            <div class="form-element">
+                <div class="label-to-top">Sort Method:</div>
+                <select id="sortMethod" name="sortMethod" class="full-width">
+                    <option value="quality">Quality Score (Recommended)</option>
+                    <option value="diversity">Resolution Diversity</option>
+                </select>
+                <p style="font-size: 1.5vh; opacity: 0.8; margin-top: 0.5vh;">
+                    Quality Score: Best overall torrents first (speed + quality). Diversity: Mix of 720p/1080p/4K.
+                </p>
+            </div>
+        </form>
+
+        <div class="separator"></div>
+
+        <div class="install-button-container">
+        <a id="installLink" class="install-link" href="#">
+            <button name="Install">INSTALL</button>
+        </a>
+        </div>
+    </div>
+    <script>
+        installLink.onclick = () => {
+            return mainForm.reportValidity()
+        }
+        const updateLink = () => {
+            const config = Object.fromEntries(new FormData(mainForm))
+            const configJson = JSON.stringify(config)
+            installLink.href = 'stremio://' + window.location.host + '/' + encodeURIComponent(configJson) + '/manifest.json'
+        }
+        mainForm.onchange = updateLink
+
+        updateLink()
+    </script>
+</body>
+
+</html>

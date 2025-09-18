@@ -1,5 +1,4 @@
-# streamx (for arm64)
-Source > https://gitlab.com/dx616b/streamx
+# StreamX
 
 An advanced torrent streaming addon with **built-in SSL support** for easy Stremio integration. Features smart filtering, quality scoring, and debrid-aware optimization. Built with Go and designed for seamless integration with Stremio.
 

@@ -1,0 +1,15 @@
+<svg viewBox="20 20 70 60" xmlns="http://www.w3.org/2000/svg">
+    <!-- Streaming waves -->
+    <path d="M25 50 Q35 40 45 50 Q55 60 65 50 Q75 40 85 50" stroke="white" stroke-width="2" fill="none" opacity="0.8"></path>
+    <path d="M25 60 Q35 50 45 60 Q55 70 65 60 Q75 50 85 60" stroke="white" stroke-width="2" fill="none" opacity="0.6"></path>
+
+    <!-- Large X shapes slightly above waves for abstract effect -->
+    <path d="M40 38 L50 48 M50 38 L40 48" stroke="white" stroke-width="6" stroke-linecap="round"></path>
+    <path d="M60 38 L70 48 M70 38 L60 48" stroke="white" stroke-width="6" stroke-linecap="round"></path>
+
+    <!-- Data flow indicators - arranged asymmetrically -->
+    <circle cx="23" cy="25" r="3" fill="white" opacity="0.7"></circle>
+    <circle cx="86" cy="25" r="2" fill="white" opacity="0.7"></circle>
+    <circle cx="23" cy="77" r="2" fill="white" opacity="0.5"></circle>
+    <circle cx="86" cy="77" r="3" fill="white" opacity="0.5"></circle>
+</svg>

@@ -1,0 +1,39 @@
+services:
+  streamx:
+    build: .
+    environment:
+      - PROWLARR_URL=${PROWLARR_URL:-"http://prowlarr:9696"}
+      - PROWLARR_API_KEY=${PROWLARR_API_KEY}
+      - REAL_DEBRID_API_KEY=${REAL_DEBRID_API_KEY}
+      - PRODUCTION=true
+      - SSL_ENABLED=${SSL_ENABLED:-true}
+      - HOST_IP=${HOST_IP}
+    ports:
+      - 7000:7000   # HTTP for configuration
+      - 443:7443    # HTTPS for Stremio (when SSL enabled)
+    depends_on:
+      - prowlarr
+    networks:
+      - streamx
+    restart: unless-stopped
+
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - prowlarr-config:/config
+    networks:
+      - streamx
+    ports:
+      - 9696:9696
+    restart: unless-stopped
+
+networks:
+  streamx:
+
+volumes:
+  prowlarr-config:
