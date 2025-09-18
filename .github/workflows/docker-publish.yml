@@ -1,4 +1,4 @@
-name: Docker Image CI for StreamX
+name: Docker Image CI for Main
 
 on:
  workflow_dispatch:
